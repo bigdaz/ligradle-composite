@@ -1,0 +1,22 @@
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'maven-publish'
+
+group = 'org.sample'
+version = '0.1'
+
+gradlePlugin {
+    plugins {
+        customPlugin {
+            id = 'org.sample.ligradle-jvm'
+            implementationClass = 'org.sample.LiGradleJvmPlugin'
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+}
