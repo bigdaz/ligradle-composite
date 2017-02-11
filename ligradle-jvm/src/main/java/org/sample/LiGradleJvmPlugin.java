@@ -8,7 +8,9 @@ import org.gradle.api.Task;
 
 import java.util.LinkedHashMap;
 
-public class LiGradleJvmPlugin implements Plugin<Project> {
+import org.sample.PluginApi;
+
+public class LiGradleJvmPlugin implements Plugin<Project>, PluginApi {
 
     public void apply(Project project) {
         project.getPluginManager().apply(org.gradle.api.plugins.JavaPlugin.class);
@@ -22,6 +24,10 @@ public class LiGradleJvmPlugin implements Plugin<Project> {
                 task.dependsOn("precompileAll");
             }
         });
+    }
+
+    public String getPluginId() {
+      return "ID";
     }
 
 }
