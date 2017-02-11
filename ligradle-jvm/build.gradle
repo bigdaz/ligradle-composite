@@ -10,7 +10,6 @@ buildscript {
 }
 
 apply plugin: 'java-gradle-plugin'
-apply plugin: 'maven-publish'
 apply plugin: org.sample.LiGradleJvmPlugin
 
 group = 'org.sample'

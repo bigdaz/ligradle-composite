@@ -13,6 +13,7 @@ public class LiGradleJvmPlugin implements Plugin<Project> {
     public void apply(Project project) {
         project.getPluginManager().apply(org.gradle.api.plugins.JavaPlugin.class);
         project.getPluginManager().apply(org.gradle.plugins.ide.idea.IdeaPlugin.class);
+        project.getPluginManager().apply(org.gradle.api.publish.maven.plugins.MavenPublishPlugin.class);
 
         project.getTasks().create("precompileAll", PreCompile.class);
         project.getTasks().withType(JavaCompile.class, new Action<Task>() {
