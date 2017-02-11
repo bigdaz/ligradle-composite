@@ -1,4 +1,10 @@
 rootProject.name = 'ligradle-composite'
 
-includeBuild "../ligradle-jvm"
-includeBuild "../ligradle-core"
+includeBuild("../ligradle-core")
+includeBuild("../ligradle-jvm") {
+    dependencySubstitution {
+        // Only substitute the development version (0.2) with project dependency.
+        // This allows the projects to be bootstrapped using v0.1 from a binary repository.
+        substitute module("org.sample:ligradle-jvm:0.2") with project(":")
+    }
+}
