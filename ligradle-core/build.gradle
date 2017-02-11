@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+    dependencies {
+        classpath 'org.sample:ligradle-jvm:0.1'
+    }
+}
+
+apply plugin: org.sample.LiGradleJvmPlugin
+
+group = 'org.sample'
+version = '0.2'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+}
