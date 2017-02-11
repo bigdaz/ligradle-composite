@@ -1,0 +1,4 @@
+rootProject.name = 'ligradle-composite'
+
+includeBuild "../ligradle-jvm"
+includeBuild "../ligradle-core"

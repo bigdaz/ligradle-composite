@@ -1,0 +1,15 @@
+buildscript {
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+    dependencies {
+        classpath 'org.sample:ligradle-jvm:0.2'
+    }
+}
+
+apply plugin: org.sample.LiGradleJvmPlugin
+apply plugin: 'application'
+
+mainClassName = "org.sample.Test"
