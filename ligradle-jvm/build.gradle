@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+    dependencies {
+        classpath 'org.sample:ligradle-jvm:0.1'
+    }
+}
+
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'maven-publish'
+apply plugin: org.sample.LiGradleJvmPlugin
+
+group = 'org.sample'
+version = '0.2'
+
+gradlePlugin {
+    plugins {
+        customPlugin {
+            id = 'org.sample.ligradle-jvm'
+            implementationClass = 'org.sample.LiGradleJvmPlugin'
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+}
