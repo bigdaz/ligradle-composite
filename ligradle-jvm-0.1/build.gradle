@@ -4,6 +4,15 @@ apply plugin: 'maven-publish'
 group = 'org.sample'
 version = '0.1'
 
+repositories {
+    maven {
+        url "../repo"
+    }
+}
+dependencies {
+    compile 'org.sample:ligradle-core:0.1'
+}
+
 gradlePlugin {
     plugins {
         customPlugin {

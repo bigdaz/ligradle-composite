@@ -1,18 +1,8 @@
-buildscript {
-    repositories {
-        maven {
-            url "../repo"
-        }
-    }
-    dependencies {
-        classpath 'org.sample:ligradle-jvm:0.1'
-    }
-}
-
-apply plugin: org.sample.LiGradleJvmPlugin
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 group = 'org.sample'
-version = '0.2'
+version = '0.1'
 
 dependencies {
     compile gradleApi()
